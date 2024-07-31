@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum CustomErrors: Error {
+enum CustomErrors: Error, Comparable {
     case urlFailed
     case serverError
 }

@@ -11,7 +11,6 @@
 		DA575B302C599702008877BE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA575B2F2C599702008877BE /* ContentView.swift */; };
 		DA575B322C599703008877BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA575B312C599703008877BE /* Assets.xcassets */; };
 		DA575B352C599703008877BE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA575B342C599703008877BE /* Preview Assets.xcassets */; };
-		DA575B3F2C599703008877BE /* NewsFeedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA575B3E2C599703008877BE /* NewsFeedTests.swift */; };
 		DA575B5A2C599801008877BE /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA575B592C599801008877BE /* FeedView.swift */; };
 		DA575B5C2C59983E008877BE /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA575B5B2C59983E008877BE /* FeedViewModel.swift */; };
 		DA575B5E2C599846008877BE /* FeedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA575B5D2C599846008877BE /* FeedModel.swift */; };
@@ -25,6 +24,9 @@
 		DAA5086B2C5AA2D6000DA14F /* DependencyInjection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA5086A2C5AA2D6000DA14F /* DependencyInjection.swift */; };
 		DAA5086E2C5AAAB7000DA14F /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA5086D2C5AAAB7000DA14F /* Events.swift */; };
 		DAA508702C5AAB5B000DA14F /* NewsCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA5086F2C5AAB5B000DA14F /* NewsCard.swift */; };
+		DAA508742C5AB03E000DA14F /* NewsDetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA508732C5AB03E000DA14F /* NewsDetailViewModelTests.swift */; };
+		DAA508772C5ABB91000DA14F /* FeedViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA508762C5ABB91000DA14F /* FeedViewModelTests.swift */; };
+		DAA5087E2C5ACBEE000DA14F /* XCTAssertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA5087D2C5ACBEE000DA14F /* XCTAssertHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,7 +46,6 @@
 		DA575B312C599703008877BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DA575B342C599703008877BE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DA575B3A2C599703008877BE /* NewsFeedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NewsFeedTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DA575B3E2C599703008877BE /* NewsFeedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedTests.swift; sourceTree = "<group>"; };
 		DA575B592C599801008877BE /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
 		DA575B5B2C59983E008877BE /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
 		DA575B5D2C599846008877BE /* FeedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedModel.swift; sourceTree = "<group>"; };
@@ -58,6 +59,9 @@
 		DAA5086A2C5AA2D6000DA14F /* DependencyInjection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyInjection.swift; sourceTree = "<group>"; };
 		DAA5086D2C5AAAB7000DA14F /* Events.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
 		DAA5086F2C5AAB5B000DA14F /* NewsCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCard.swift; sourceTree = "<group>"; };
+		DAA508732C5AB03E000DA14F /* NewsDetailViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailViewModelTests.swift; sourceTree = "<group>"; };
+		DAA508762C5ABB91000DA14F /* FeedViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModelTests.swift; sourceTree = "<group>"; };
+		DAA5087D2C5ACBEE000DA14F /* XCTAssertHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTAssertHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,7 +125,8 @@
 		DA575B3D2C599703008877BE /* NewsFeedTests */ = {
 			isa = PBXGroup;
 			children = (
-				DA575B3E2C599703008877BE /* NewsFeedTests.swift */,
+				DAA5087C2C5ACBDA000DA14F /* Helpers */,
+				DAA508712C5AAFFF000DA14F /* Scenes */,
 			);
 			path = NewsFeedTests;
 			sourceTree = "<group>";
@@ -206,6 +211,39 @@
 				DAA5086D2C5AAAB7000DA14F /* Events.swift */,
 			);
 			path = Comuns;
+			sourceTree = "<group>";
+		};
+		DAA508712C5AAFFF000DA14F /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				DAA508752C5ABB80000DA14F /* Feed */,
+				DAA508722C5AB015000DA14F /* NewsDetail */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		DAA508722C5AB015000DA14F /* NewsDetail */ = {
+			isa = PBXGroup;
+			children = (
+				DAA508732C5AB03E000DA14F /* NewsDetailViewModelTests.swift */,
+			);
+			path = NewsDetail;
+			sourceTree = "<group>";
+		};
+		DAA508752C5ABB80000DA14F /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				DAA508762C5ABB91000DA14F /* FeedViewModelTests.swift */,
+			);
+			path = Feed;
+			sourceTree = "<group>";
+		};
+		DAA5087C2C5ACBDA000DA14F /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				DAA5087D2C5ACBEE000DA14F /* XCTAssertHelper.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -330,7 +368,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA575B3F2C599703008877BE /* NewsFeedTests.swift in Sources */,
+				DAA508742C5AB03E000DA14F /* NewsDetailViewModelTests.swift in Sources */,
+				DAA5087E2C5ACBEE000DA14F /* XCTAssertHelper.swift in Sources */,
+				DAA508772C5ABB91000DA14F /* FeedViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

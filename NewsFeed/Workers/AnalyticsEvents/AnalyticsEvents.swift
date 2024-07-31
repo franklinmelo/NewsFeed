@@ -7,10 +7,10 @@
 
 import Foundation
 
-protocol Event: Codable {}
+protocol Event: Codable, Equatable {}
 
 protocol HasAnalyticsEvents {
-    func log(event: Event)
+    func log(event: any Event)
 }
 
 final class AnalyticsEvents: HasAnalyticsEvents {
