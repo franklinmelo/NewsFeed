@@ -11,9 +11,11 @@ protocol FeedViewModelDelegate: ObservableObject {
     var model: FeedNews? { get }
     var isLoading: Bool { get }
     func fetchNews() async throws
+    func logScreenAccessEvent()
 }
 
 final class FeedViewModel: FeedViewModelDelegate {
+    @Injected(\.analyticsEvents) var analyticsEventsWorker: HasAnalyticsEvents
     @Published var model: FeedNews?
     @Published var isLoading: Bool = false
     private var service: FeedServicing
@@ -31,5 +33,10 @@ final class FeedViewModel: FeedViewModelDelegate {
         } catch {
             throw error
         }
+    }
+    
+    func logScreenAccessEvent() {
+        let event = ScreenAccessEvent(screenName: "Feed_noticias", acessDate: .now, userID: .init())
+        analyticsEventsWorker.log(event: event)
     }
 }

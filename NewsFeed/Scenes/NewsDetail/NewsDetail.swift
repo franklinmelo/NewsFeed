@@ -15,35 +15,41 @@ struct NewsDetail: View {
     }
     
     var body: some View {
-        LazyVStack(alignment: .leading) {
-            Text(viewModel.model.author ?? "")
-                .font(.subheadline)
-                .lineLimit(1)
-            HStack(alignment: .top) {
-                AsyncImage(url: URL(string: viewModel.model.urlToImage ?? "")) {
-                    $0.image?
-                        .resizable()
-                        .scaledToFit()
+        ScrollView {
+            LazyVStack(alignment: .leading) {
+                Text(viewModel.model.author ?? "")
+                    .font(.subheadline)
+                    .lineLimit(1)
+                HStack(alignment: .top) {
+                    AsyncImage(url: URL(string: viewModel.model.urlToImage ?? "")) {
+                        $0.image?
+                            .resizable()
+                            .scaledToFit()
+                    }
                 }
-            }
-            Text(viewModel.model.title)
-                .font(.title)
-                .padding(4)
-            Text(viewModel.model.description)
-                .font(.body)
-                .foregroundStyle(.gray)
-            
-            HStack {
-                Text(viewModel.getFormatedDate())
-                    .foregroundStyle(.placeholder)
-                Spacer()
-                if let url = URL(string: viewModel.model.url) {
-                    Link("Saiba mais", destination: url)
+                Text(viewModel.model.title)
+                    .font(.title)
+                    .padding(4)
+                Text(viewModel.model.description)
+                    .font(.body)
+                    .foregroundStyle(.gray)
+                
+                HStack {
+                    Text(viewModel.getFormatedDate())
+                        .foregroundStyle(.placeholder)
+                    Spacer()
+                    Button("Saiba mais") {
+                        viewModel.openArticle()
+                    }
+                    .buttonStyle(BorderedButtonStyle())
                 }
+                .padding(.vertical)
             }
-            .padding(.vertical)
+            .padding()
         }
-        .padding()
+        .onAppear(perform: {
+            viewModel.logScreenAccessEvent()
+        })
         Spacer()
     }
 }

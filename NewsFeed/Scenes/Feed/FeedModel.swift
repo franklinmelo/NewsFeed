@@ -28,30 +28,4 @@ struct News: Decodable, Identifiable {
         case urlToImage
         case publishedAt
     }
-    
-    public init(
-        author: String,
-        title: String,
-        description: String,
-        url: String,
-        urlToImage: String,
-        publishedAt: String
-    ) {
-        self.author = author
-        self.title = title
-        self.description = description
-        self.url = url
-        self.urlToImage = urlToImage
-        self.publishedAt = publishedAt
-    }
-    
-    init(from decoder: any Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-        self.author = try container.decodeIfPresent(String.self, forKey: .author)
-        self.title = try container.decode(String.self, forKey: .title)
-        self.description = try container.decode(String.self, forKey: .description)
-        self.url = try container.decode(String.self, forKey: .url)
-        self.urlToImage = try container.decodeIfPresent(String.self, forKey: .urlToImage)
-        self.publishedAt = try container.decode(String.self, forKey: .publishedAt)
-    }
 }
