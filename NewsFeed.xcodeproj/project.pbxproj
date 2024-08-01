@@ -62,6 +62,7 @@
 		DAA508732C5AB03E000DA14F /* NewsDetailViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailViewModelTests.swift; sourceTree = "<group>"; };
 		DAA508762C5ABB91000DA14F /* FeedViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModelTests.swift; sourceTree = "<group>"; };
 		DAA5087D2C5ACBEE000DA14F /* XCTAssertHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTAssertHelper.swift; sourceTree = "<group>"; };
+		DAA5087F2C5BAAF7000DA14F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +111,7 @@
 				DA575B2F2C599702008877BE /* ContentView.swift */,
 				DA575B312C599703008877BE /* Assets.xcassets */,
 				DA575B332C599703008877BE /* Preview Content */,
+				DAA5087F2C5BAAF7000DA14F /* Info.plist */,
 			);
 			path = NewsFeed;
 			sourceTree = "<group>";
@@ -514,7 +516,8 @@
 				DEVELOPMENT_ASSET_PATHS = "\"NewsFeed/Preview Content\"";
 				DEVELOPMENT_TEAM = 9MXZLSN4X6;
 				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = /Users/franklinmelo/Projetos/NewsFeed/NewsFeed/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -543,7 +546,8 @@
 				DEVELOPMENT_ASSET_PATHS = "\"NewsFeed/Preview Content\"";
 				DEVELOPMENT_TEAM = 9MXZLSN4X6;
 				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = /Users/franklinmelo/Projetos/NewsFeed/NewsFeed/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
