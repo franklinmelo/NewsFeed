@@ -29,7 +29,7 @@ final class NewsViewModel: NewsViewModelDelegate {
         guard let date = dateFormatter.date(from: model.publishedAt) else { return "" }
         
         let formatter = DateFormatter()
-        formatter.locale = .autoupdatingCurrent
+        formatter.locale = .init(identifier: "pt_BR")
         formatter.setLocalizedDateFormatFromTemplate("ddMMyyyy")
         let stringDate = formatter.string(from: date)
         return stringDate
