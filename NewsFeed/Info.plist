@@ -4,7 +4,7 @@
 <dict>
 	<key>CFBundleLocalizations</key>
 	<array>
-		<string>Portuguese</string>
+		<string>Protuguese</string>
 	</array>
 	<key>CFBundleName</key>
 	<string>$(PRODUCT_NAME)</string>
@@ -41,7 +41,7 @@
 		<dict/>
 	</dict>
 	<key>CFBundleDevelopmentRegion</key>
-	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<string>Portuguese (Brazil)</string>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
