@@ -70,7 +70,7 @@ final class NewsDetailViewModelTests: XCTestCase {
     func testGetFormatedDate_shouldReturnUSFormat() throws {
         let date = try XCTUnwrap(sut?.getFormatedDate())
         
-        XCTAssertEqual(date, "11/05/2024")
+        XCTAssertEqual(date, "11 de mai. de 2024")
     }
     
     func testOpenArticle_shouldCallWorker() throws {
