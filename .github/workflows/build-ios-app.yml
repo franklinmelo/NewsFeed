@@ -22,7 +22,7 @@ jobs:
           key: bazel
 
       - name: Build
-        run: bazel build //Draw:Draw
+        run: bazel build //NewsFeed:NewsFeed
 
       - name: Test
         run: |
