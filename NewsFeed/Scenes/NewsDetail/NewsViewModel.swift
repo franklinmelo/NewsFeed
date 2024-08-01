@@ -25,7 +25,6 @@ final class NewsViewModel: NewsViewModelDelegate {
     
     func getFormatedDate() -> String {
         let dateFormatter = DateFormatter()
-        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
         let date = dateFormatter.date(from: model.publishedAt)
         return date?.formatted(date: .abbreviated, time: .omitted) ?? ""
