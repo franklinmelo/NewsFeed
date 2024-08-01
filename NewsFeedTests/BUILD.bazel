@@ -17,11 +17,10 @@ swift_library(
 ios_unit_test(
     name = "NewsFeedTests",
     minimum_os_version = "17.4",
-    # runner = "@build_bazel_rules_apple//apple/testing/default_runner:ios_xctestrun_random_runner", # create a bazel simulator. Is necessary specify arm64 in command line (bazel test //DrawTests:DrawTests --test_output=all --cpu=ios_sim_arm64) 
-    test_host = "//NewsFeed:NewsFeed", # fix "Will consider the test as test type Logic Test to run. Because the app under test is not given." Error
+    test_host = "//NewsFeed:NewsFeed",
     visibility = [
-        "//NewsFeed:__subpackages__", # turn this visible only to Draw subpackages, becouse public can be problems
-        "@rules_xcodeproj//xcodeproj:generated", #turn this tests visible do xcodeproj top_level_targets
+        "//NewsFeed:__subpackages__",
+        "@rules_xcodeproj//xcodeproj:generated",
     ],
     deps = [":NewsFeedTestsLibrary"],
 )

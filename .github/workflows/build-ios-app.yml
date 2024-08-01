@@ -1,0 +1,31 @@
+name: 'Build iOS app'
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: macOS-latest
+    timeout-minutes: 30
+    steps:
+      - name: checkout repository
+        uses: actions/checkout@v4
+
+      - name: bazel setup
+        uses: bazelbuild/setup-bazelisk@v3
+
+      - name: Mount bazel cache
+        uses: actions/cache@v4
+        with:
+          path: '~/.cache/bazel'
+          key: bazel
+
+      - name: Build
+        run: bazel build //Draw:Draw
+
+      - name: Test
+        run: |
+          pgrep Simulator | xargs kill || true
+
+          bazel test //NewsFeedTests:NewsFeedTests --test_output=all --cpu=ios_x86_64
