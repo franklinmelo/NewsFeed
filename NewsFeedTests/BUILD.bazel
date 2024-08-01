@@ -1,0 +1,26 @@
+load(
+    "@build_bazel_rules_apple//apple:ios.bzl",
+    "ios_unit_test"
+)
+load("@build_bazel_rules_swift//swift:swift.bzl", "swift_library")
+
+swift_library(
+    name = "NewsFeedTestsLibrary",
+    tags = ["manual"],
+    testonly = True, # fix "import XCTest" Error in test files
+    srcs = glob(["**/*.swift"]),
+    deps = [
+        "//NewsFeed:SwiftLibrary",
+    ],
+)
+
+ios_unit_test(
+    name = "NewsFeedTests",
+    minimum_os_version = "17.4",
+    test_host = "//NewsFeed:NewsFeed",
+    visibility = [
+        "//NewsFeed:__subpackages__",
+        "@rules_xcodeproj//xcodeproj:generated",
+    ],
+    deps = [":NewsFeedTestsLibrary"],
+)
